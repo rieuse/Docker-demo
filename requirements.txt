@@ -1,0 +1,5 @@
+pymongo
+requests
+bs4
+lxml
+redis

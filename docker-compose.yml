@@ -1,0 +1,22 @@
+version: '2'
+services:
+  main-python:
+    image: "python:v1"
+    volumes:
+     - .:/code
+  mongodb:
+    image: "mongo:latest"
+    links:
+      - main-python
+    volumes: 
+      - ./db:/data/db
+    ports:
+     - "27017:27017"
+  redis:
+    image: "redis:latest"
+    links:
+      - main-python
+    volumes: 
+      - ./redis-data:/redis/data
+    ports:
+     - "6379:6379"
