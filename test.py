@@ -13,9 +13,8 @@ def crawl():
     url = 'http://www.ximalaya.com/tracks/57774592.json'
     data = requests.get(url, headers=headers).json()
     print(data)
-    print(type(data))
-    # col.insert(data)
-    # to_redis(data['play_path_64'])
+    col.insert(data)
+    to_redis(data['play_path_64'])
 
 
 def to_redis(data):
