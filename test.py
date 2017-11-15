@@ -26,7 +26,7 @@ def to_redis(data):
 
 def pop_redis():
     r = redis.StrictRedis(host='redis', port=6379, decode_responses=True)
-    return r.spop("test")
+    r.spop("test")
 
 
 if __name__ == '__main__':
